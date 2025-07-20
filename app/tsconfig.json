@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    /* Base Options */
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "ES2022",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+
+    /* Strictness */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitAny": true,
+
+    /* Module settings */
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"] // Allows for clean imports like '@/core/database'
+    },
+
+    /* Output */
+    "outDir": "dist",
+
+    /* Library */
+    "lib": ["ES2022"]
+  },
+  "include": ["src/**/*.ts"], // Only compile files in the src directory
+  "exclude": ["node_modules"]
+}

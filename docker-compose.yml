@@ -1,0 +1,12 @@
+services:
+  wh40k10ed-api:
+    build:
+      context: .
+      target: deps
+    ports:
+      - "${PORT}:${PORT}"
+    volumes:
+      - ./app:/usr/src/app
+    env_file:
+      - .env
+    command: npm run dev

@@ -1,0 +1,6 @@
+# Ignore build output and dependencies
+dist
+node_modules
+
+# Ignore local data files
+data

@@ -1,0 +1,8 @@
+services:
+  wh40k10ed-api:
+    build:
+      context: .
+    ports:
+      - "${PORT}:${PORT}"
+    env_file:
+      - .env
