@@ -3,10 +3,19 @@ services:
     build:
       context: .
       target: deps
+      args:
+        # Pass the host user's ID and group ID to the build
+        USER_ID: ${USER_ID:-1000}
+        GROUP_ID: ${GROUP_ID:-1000}
     ports:
       - "${PORT}:${PORT}"
     volumes:
+      # Code is mounted directly into the container
       - ./app:/usr/src/app
+      # This ensures the container's node_modules are used, not the host's
+      - /usr/src/app/node_modules
     env_file:
       - .env
+    # Run the container with the specified user and group
+    user: "${USER_ID:-1000}:${GROUP_ID:-1000}"
     command: npm run dev

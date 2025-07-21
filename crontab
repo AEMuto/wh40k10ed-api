@@ -1,2 +1,2 @@
-# Run the update check script every day at 3:00 AM
-0 3 * * * root    cd /usr/src/app && npm run script:check >> /proc/1/fd/1 2>&1
+# Run the update check script every day at 3:00 AM as the 'node' user
+0 3 * * * node    cd /usr/src/app && npm run script:updateDB >> /proc/1/fd/1 2>&1
